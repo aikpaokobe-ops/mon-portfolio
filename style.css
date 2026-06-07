@@ -1,0 +1,271 @@
+        
+       /* Le sélecteur * signifie "tous les élément du site " */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Permet de calculer les tailles ( largeur/marges) sans mauvaise surprise*/
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    
+    /* L'astuce magique pour le footer en bas */
+    display: flex;
+    flex-direction: column;   /* Aligne les blocs verticalement (header, main, footer) */
+    min-height: 100vh;        /* Force le body à faire AU MOINS 100% de la hauteur de l'écran */
+}
+
+h1{ 
+    color: #2c3e50;/* un beau bleu nuit professionnel*/
+    font-size: 32px;/*Taille du titre principal*/
+}
+
+h2{
+    color: #16a085;/* une touche de vert émeraude pour les sous titre*/
+    border-bottom: 2px solid #16a085;/* une fine ligne sous le titre*/
+    padding-bottom: 5px;/* un petit espace sous le texte avant la ligne*/
+}
+
+.objet{
+     margin-top: 5px;
+}
+
+a{
+    color: #2980b9;/* un bleu vif pour les liens */
+    text-decoration: none;/* enlève le soulignement moche sous les liens*/
+    
+}
+
+a:hover{
+    text-decoration: underline;/* le lien se souligne uniquement quand on passe la souris dessus*/
+    color: #2c3e50;/* le lien change de couleur au survol*/
+}
+
+/* On sible la liste <ul> qui est dans le < nav> */
+
+nav ul{
+    display: flex;/* magie : aligne tous les <li> sur une ligne droite */
+    list-style-type: none;/* enlève les petits points noir de la liste*/
+    padding: 0; /* enlève l'espace vide par défaut de la liste */
+    margin:0;
+    background-color: #465e77;/* un fond bleu nuit pour notre barre de navigation*/
+}
+
+/* On cible chaque élément <li> de notre menu */
+
+nav li{
+
+    /* pas  besoin de grande chose pour l'instant */
+}
+
+
+/* On stylise les liens spécifiquement dans le menu */
+
+nav a{
+    display: block;
+    color:white;  /* le texte du menu en blanc*/
+    padding: 15px 20px;   /* donne de la hauteur et la largeur au bouton*/
+    font-weight: bold;   /*met le texte en gras*/
+    
+}
+
+/* Changement de couleur  quand on passe la souris  sur le menu */
+
+nav a:hover{
+
+    background-color: #16a085;  /*le fond devient vert émeraude*/
+    text-decoration: none;  /*on garde le texte sans soulignement*/
+    color: wheat;
+}
+
+main {
+    max-width: 800px;       /* Le site ne dépassera jamais 800px de large (très pro) */
+    margin: 20px auto;      /* 20px d'espace en haut/bas, et "auto" centre le site au milieu de l'écran */
+    padding: 0 20px;        /* Un peu d'espace sur les côtés pour les petits écrans mobiles */
+    flex: 1;
+}
+
+section {
+    margin-bottom: 40px;    /* Espace important entre chaque section pour laisser respirer le design */
+}
+
+img {
+    max-width: 100%;        /* L'image s'adapte automatiquement à la largeur de l'écran */
+    height: auto;
+    border-radius: 8px;     /* Arrondit joliment les angles de l'image */
+}
+
+  /* 1. Le conteneur : on lui dit d'aligner ses enfants en ligne */
+
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;    /* Si l'écran est trop petit (mobile), les cartes passent en dessous automatiquement*/
+    gap: 20px;          /* Crée un espace uniforme  de 20 px entre chaque carte */
+    margin-top: 20px;
+}
+
+/* 2. Le style de chaque carte individuelle */
+
+.card{
+    flex: 1 1 calc(25% - 20px); /* Dit aux cartes de prendre chacune 25% de la largeur disponible (4 cartes en ligne )*/
+    min-width: 200px;           /* Sur mobile, si l'espace fait moins de 200px , la carte s'agrandit*/
+    background-color: white;  /* fond blanc pour faire ressortir la carte du fond gris*/
+    padding: 20px;              /* Espace interne pour que le texte ne colle pas aux bord de la carte*/
+    border-radius: 8px;         /* Angles arrondis modernes*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Une ombre trés légère et subtile sous la carte ( effet pro garanti) */
+    border-top: 4px solid #16a085; /* Une petite barre verte élégante au sommet de chaque carte*/
+    transition: transform 0.3s ease; /* Prépare une animation fluide pour le survol*/
+}
+
+/*3. L'effet de survol (hover) : la carte s'anime quand on passe la souris dessus */
+
+.card:hover{
+    transform: translateY(-5px); /* la carte s'élève légèrement de 5 pixels*/
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* L'ombre s'accentue pour donner un effet de surélévation*/
+}
+
+/* 4. Style rapide pour les titres dans les carte*/
+
+.card h3{
+    margin-top: 0; /* Enlève la marge par defaut en haut du titre*/
+    color: #2c3e50;
+    font-size: 20px;
+}
+
+footer{
+    background-color: #2c3e50; /* Même bleu nuit qu le menu pour la cohérence */
+    color: #ffffff;            /* Texte blanc*/
+    text-align: center;          /* Centre le texte au milieu*/
+    padding: 20px 0;             /* Donne de la hauteur au pied de page */
+    margin-top: 50px;            /*Repousse le footer vers le bas pour ne pas coller aux cartes*/
+    font-size: 14px;             /* texte légèrement plus petit*/
+}
+
+footer p{
+    margin: 0;                   /* Enlève la marge par défaut du paragraphe à l'intérieur*/
+}
+
+
+
+                                                    /* Style du formulaire */
+
+.contact-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+/* Espacement entre les blocs de champs */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Aligne le label au-dessus de l'input */
+}
+
+/* Style des labels */
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Style des champs de texte et textarea */
+.form-group input, 
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Effet quand l'utilisateur clique dans un champ (Focus) */
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #16a085; /* Le contour devient vert émeraude */
+}
+
+/* Style du bouton d'envoi */
+.btn-submit {
+    background-color: #16a085;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Le bouton prend toute la largeur */
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #117a65; /* Vert plus foncé au survol */
+}
+
+
+                               /* Style pour les blocs de la page À propos */
+
+.about-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px; /* Espace entre les deux blocs */
+    border-left: 5px solid #2980b9; /* Une bordure bleue élégante sur le côté gauche */
+}
+
+.about-box h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Style pour le message d'erreur du formulaire */
+.error-text {
+    color: #e74c3c; /* Un rouge vif pour signaler l'erreur */
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+    display: none; /* Caché par défaut, JavaScript l'affichera */
+}
+
+                             /* Le style du bouton ( lumière sombre) lui-même */
+.btn-theme {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Le fond du site devient sombre */
+body.dark-theme {
+    background-color: #1a1a1a;
+}
+
+/* Seul le texte à l'intérieur du <main> devient clair en mode sombre */
+body.dark-theme main {
+    color: #f4f7f6;
+}
+
+/* Les cartes et les boîtes s'adaptent */
+body.dark-theme .card, 
+body.dark-theme .about-box {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+
+body.dark-theme header h1 {
+    color: white ; 
+}
